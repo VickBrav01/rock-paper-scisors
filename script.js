@@ -24,37 +24,38 @@ let playerScore = 0;
 let playround = function (playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     console.log(`Draw`);
-    // computerScore = playerScore;
+    computerScore = ++computerScore;
+    playerScore = ++playerScore;
   } else if (playerSelection == "Rock" && computerSelection == "Scisors") {
     console.log(
       `Player has won: ${playerSelection} defeats ${computerSelection}`
     );
-    playerScore = ++playerScore;
+    playerScore += 3;
   } else if (playerSelection == "Scisors" && computerSelection == "Paper") {
     console.log(
       `Player has won: ${playerSelection} defeats ${computerSelection}`
     );
-    playerScore = ++playerScore;
+    playerScore += 3;
   } else if (playerSelection == "Paper" && computerSelection == "Rock") {
     console.log(
       `Player has won: ${playerSelection} defeats ${computerSelection}`
     );
-    playerScore = ++playerScore;
+    playerScore += 3;
   } else if (computerSelection == "Paper" && playerSelection == "Rock") {
     console.log(
       `Computer has won: ${computerSelection} defeats ${playerSelection}`
     );
-    computerScore = ++computerScore;
+    computerScore += 3;
   } else if (computerSelection == "Scisors" && playerSelection == "Paper") {
     console.log(
       `Computer has won: ${computerSelection} defeats ${playerSelection}`
     );
-    computerScore = ++computerScore;
+    computerScore += 3;
   } else if (computerSelection == "Rock" && playerSelection == "Scisors") {
     console.log(
       `Computer has won: ${computerSelection} defeats ${playerSelection}`
     );
-    computerScore = ++computerScore;
+    computerScore += 3;
   }
 };
 
@@ -67,9 +68,13 @@ const game = function (n) {
   if (playerScore == computerScore) {
     console.log(`Its a tie at ${playerScore} 🥱`);
   } else if (playerScore > computerScore) {
-    console.log(`Player has won with ${playerScore} points`);
+    console.log(
+      `Player has won with ${playerScore} points aganist computer with ${computerScore} points`
+    );
   } else if (computerScore > playerScore) {
-    console.log(`Computer has won with ${computerScore} points`);
+    console.log(
+      `Computer has won with ${computerScore} points aganist player with ${playerScore} points`
+    );
   }
 };
 
